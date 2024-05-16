@@ -9,13 +9,14 @@ terraform{
 }
 
 provider "aws" {
-    region = "us-west-2"
+    region = "us-east-1"
 }
 
 resource "aws_instance" "web" {
-  ami           = "${var.OS}"
+  ami = "${var.OS}"
   instance_type = "${var.Processor}"
-
+  key_name = "${var.KeyPair}"
+  vpc_security_group_ids = ["${var.SecGroupId}"]
   tags = {
     Name = "terraform_Creation"
   }
