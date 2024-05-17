@@ -10,3 +10,6 @@ variable "KeyPair" {
 variable "SecGroupId" {
  default = "sg-0030c841b212cf15d" 
 }
+variable "InstanceName" {
+    default = "TerraForm_Creation"  
+}
