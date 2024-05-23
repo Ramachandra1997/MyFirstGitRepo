@@ -19,4 +19,5 @@ module "ec2_creation" {
     source = "./modules/ec2_Instance"
     OS = var.os
     processor = lookup(var.configuration, terraform.workspace, "t2.micro" )
+    ServerName = "server_${terraform.workspace}"
 }
